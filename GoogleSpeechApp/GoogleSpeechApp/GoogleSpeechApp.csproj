@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4D5B2FA1-B38C-4644-86A5-4DDD8097B966}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>GoogleSpeechApp</RootNamespace>
+    <AssemblyName>GoogleSpeechApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Google.Api.CommonProtos, Version=1.1.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.CommonProtos.1.1.0\lib\net45\Google.Api.CommonProtos.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.2.1.0\lib\net45\Google.Api.Gax.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Api.Gax.Grpc, Version=2.1.0.0, Culture=neutral, PublicKeyToken=3ec5ea7f18953e47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Api.Gax.Grpc.2.1.0\lib\net45\Google.Api.Gax.Grpc.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.31.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.31.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.31.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.31.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.31.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.31.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.31.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.31.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.31.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.31.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Cloud.Speech.V1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Cloud.Speech.V1.1.0.0\lib\net45\Google.Cloud.Speech.V1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.LongRunning, Version=1.0.0.0, Culture=neutral, PublicKeyToken=185c282632e132a0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.LongRunning.1.0.0\lib\net45\Google.LongRunning.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.4.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.4.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Auth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Auth.1.6.1\lib\net45\Grpc.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.1.6.1\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Interactive.Async, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.1.1\lib\net46\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.1\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="google-credentials.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sounds\0.wav" />
+    <Content Include="Sounds\1.wav" />
+    <Content Include="Sounds\10.wav" />
+    <Content Include="Sounds\100.wav" />
+    <Content Include="Sounds\1000.wav" />
+    <Content Include="Sounds\10000.wav" />
+    <Content Include="Sounds\11.wav" />
+    <Content Include="Sounds\12.wav" />
+    <Content Include="Sounds\13.wav" />
+    <Content Include="Sounds\14.wav" />
+    <Content Include="Sounds\15.wav" />
+    <Content Include="Sounds\16.wav" />
+    <Content Include="Sounds\17.wav" />
+    <Content Include="Sounds\18.wav" />
+    <Content Include="Sounds\19.wav" />
+    <Content Include="Sounds\1million.wav" />
+    <Content Include="Sounds\2.wav" />
+    <Content Include="Sounds\20.wav" />
+    <Content Include="Sounds\200.wav" />
+    <Content Include="Sounds\2000.wav" />
+    <Content Include="Sounds\21.wav" />
+    <Content Include="Sounds\22.wav" />
+    <Content Include="Sounds\23.wav" />
+    <Content Include="Sounds\24.wav" />
+    <Content Include="Sounds\25.wav" />
+    <Content Include="Sounds\26.wav" />
+    <Content Include="Sounds\27.wav" />
+    <Content Include="Sounds\28.wav" />
+    <Content Include="Sounds\29.wav" />
+    <Content Include="Sounds\3.wav" />
+    <Content Include="Sounds\30.wav" />
+    <Content Include="Sounds\300.wav" />
+    <Content Include="Sounds\3000.wav" />
+    <Content Include="Sounds\31.wav" />
+    <Content Include="Sounds\32.wav" />
+    <Content Include="Sounds\33.wav" />
+    <Content Include="Sounds\34.wav" />
+    <Content Include="Sounds\35.wav" />
+    <Content Include="Sounds\36.wav" />
+    <Content Include="Sounds\37.wav" />
+    <Content Include="Sounds\38.wav" />
+    <Content Include="Sounds\39.wav" />
+    <Content Include="Sounds\4.wav" />
+    <Content Include="Sounds\40.wav" />
+    <Content Include="Sounds\400.wav" />
+    <Content Include="Sounds\4000.wav" />
+    <Content Include="Sounds\41.wav" />
+    <Content Include="Sounds\42.wav" />
+    <Content Include="Sounds\43.wav" />
+    <Content Include="Sounds\44.wav" />
+    <Content Include="Sounds\45.wav" />
+    <Content Include="Sounds\46.wav" />
+    <Content Include="Sounds\47.wav" />
+    <Content Include="Sounds\48.wav" />
+    <Content Include="Sounds\49.wav" />
+    <Content Include="Sounds\5.wav" />
+    <Content Include="Sounds\50.wav" />
+    <Content Include="Sounds\500.wav" />
+    <Content Include="Sounds\5000.wav" />
+    <Content Include="Sounds\51.wav" />
+    <Content Include="Sounds\52.wav" />
+    <Content Include="Sounds\53.wav" />
+    <Content Include="Sounds\54.wav" />
+    <Content Include="Sounds\55.wav" />
+    <Content Include="Sounds\56.wav" />
+    <Content Include="Sounds\57.wav" />
+    <Content Include="Sounds\58.wav" />
+    <Content Include="Sounds\59.wav" />
+    <Content Include="Sounds\6.wav" />
+    <Content Include="Sounds\60.wav" />
+    <Content Include="Sounds\600.wav" />
+    <Content Include="Sounds\6000.wav" />
+    <Content Include="Sounds\61.wav" />
+    <Content Include="Sounds\62.wav" />
+    <Content Include="Sounds\63.wav" />
+    <Content Include="Sounds\64.wav" />
+    <Content Include="Sounds\65.wav" />
+    <Content Include="Sounds\66.wav" />
+    <Content Include="Sounds\67.wav" />
+    <Content Include="Sounds\68.wav" />
+    <Content Include="Sounds\69.wav" />
+    <Content Include="Sounds\7.wav" />
+    <Content Include="Sounds\70.wav" />
+    <Content Include="Sounds\700.wav" />
+    <Content Include="Sounds\71.wav" />
+    <Content Include="Sounds\72.wav" />
+    <Content Include="Sounds\73.wav" />
+    <Content Include="Sounds\74.wav" />
+    <Content Include="Sounds\75.wav" />
+    <Content Include="Sounds\76.wav" />
+    <Content Include="Sounds\77.wav" />
+    <Content Include="Sounds\78.wav" />
+    <Content Include="Sounds\79.wav" />
+    <Content Include="Sounds\8.wav" />
+    <Content Include="Sounds\80.wav" />
+    <Content Include="Sounds\800.wav" />
+    <Content Include="Sounds\8000.wav" />
+    <Content Include="Sounds\81.wav" />
+    <Content Include="Sounds\82.wav" />
+    <Content Include="Sounds\83.wav" />
+    <Content Include="Sounds\84.wav" />
+    <Content Include="Sounds\85.wav" />
+    <Content Include="Sounds\86.wav" />
+    <Content Include="Sounds\87.wav" />
+    <Content Include="Sounds\88.wav" />
+    <Content Include="Sounds\89.wav" />
+    <Content Include="Sounds\9.wav" />
+    <Content Include="Sounds\90.wav" />
+    <Content Include="Sounds\900.wav" />
+    <Content Include="Sounds\9000.wav" />
+    <Content Include="Sounds\91.wav" />
+    <Content Include="Sounds\92.wav" />
+    <Content Include="Sounds\93.wav" />
+    <Content Include="Sounds\94.wav" />
+    <Content Include="Sounds\95.wav" />
+    <Content Include="Sounds\96.wav" />
+    <Content Include="Sounds\97.wav" />
+    <Content Include="Sounds\98.wav" />
+    <Content Include="Sounds\99.wav" />
+    <Content Include="Sounds\hundred.wav" />
+    <Content Include="Sounds\million.wav" />
+    <Content Include="Sounds\thousand.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.1.6.1\build\net45\Grpc.Core.targets'))" />
+  </Target>
+</Project>
